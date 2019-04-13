@@ -65,4 +65,5 @@ gem 'bootstrap', '4.3.1'
 gem 'devise', '4.6.2'
 gem 'jquery-rails'
 gem 'popper_js'
-
+gem 'image_processing', '~> 1.2'
+gem 'mini_magick', '~> 4.8'

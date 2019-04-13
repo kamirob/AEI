@@ -26,7 +26,10 @@
     <%= form.number_field :price %>
   </div>
 
-   <div class="departments-dropdown">
+  <%= form.label :uploads%>
+  <%= form.file_field :uploads, multiple: true%>
+
+  <div class="departments-dropdown">
       <%= form.collection_select(:category_ids, Category.all, :id, :name, { include_blank: "Categoría"},  {class: "btn btn-default dropdown-toggle"}) %>
   </div> 
 
