@@ -3,10 +3,11 @@
         <div class="row container-row">
             <div class="col-md-12">
                 <div class="content">
-                    <%= render "carrousel" %>     
-                    <%= render "navbar" %>
+                    <%= render "./welcome/navbar" %>
+                    <%= render "categories" %>
+                    <%= yield %>
                 </div>  
             </div>         
-        </div>   
+        </div>        
     </body>
 </html>

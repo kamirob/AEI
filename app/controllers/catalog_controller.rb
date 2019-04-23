@@ -1,6 +1,7 @@
-class WelcomeController < ApplicationController
+class CatalogController < ApplicationController
     before_action :get_category, only: [:index, :show, :edit, :update, :destroy]
     before_action :get_product, only: [:index, :show, :edit, :update, :destroy]
+
 
     def index
         get_category
