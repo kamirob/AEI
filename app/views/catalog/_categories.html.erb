@@ -6,8 +6,8 @@
                     <article class="card-group-item">
                         <header class="card-header">
                             <a class="" aria-expanded="true" href="#" data-toggle="collapse" data-target="#collapse22">
-                                <i class="icon-action fa fa-chevron-down"></i>
-                                <h6 class="title">Por Categoría</h6>
+                                <i class="icon-action fa fa-chevron-down" style="color: #ffffff;"></i>
+                                <h6 class="title" style="color: #ffffff;">Por Categoría</h6>
                             </a>
                         </header>
                         <div style="" class="filter-content collapse show" id="collapse22">
@@ -23,7 +23,7 @@
                               
                                 <% @categories.each do |category| %>  
                                     <ul class="list-unstyled list-lg">
-                                        <li><%= category.name %><span class="float-right badge badge-light round">142</span> </a></li>
+                                        <li style="font-size: 13px;"><%= category.name %><span class="float-right badge badge-light round" style="font-size: 10px;">142</span> </a></li>
                                     </ul>  
                                 <% end %>
                             </div> <!-- card-body.// -->
@@ -33,8 +33,8 @@
                     <article class="card-group-item">
                         <header class="card-header">
                             <a href="#" data-toggle="collapse" data-target="#collapse33">
-                                <i class="icon-action fa fa-chevron-down"></i>
-                                <h6 class="title">Por Precio</h6>
+                                <i class="icon-action fa fa-chevron-down" style="color: #ffffff;"></i>
+                                <h6 class="title" style="color: #ffffff;">Por Precio</h6>
                             </a>
                         </header>
                         <div class="filter-content collapse show" id="collapse33">
@@ -54,32 +54,10 @@
                             </div> <!-- card-body.// -->
                         </div> <!-- collapse .// -->
                     </article> <!-- card-group-item.// -->
-
-                    <article class="card-group-item">
-                        <header class="card-header">
-                            <a href="#" data-toggle="collapse" data-target="#collapse44">
-                                <i class="icon-action fa fa-chevron-down"></i>
-                                <h6 class="title">Por Marca</h6>
-                            </a>
-                        </header>
-                        <div class="filter-content collapse show" id="collapse44">
-                            <div class="card-body">
-                                <form>
-                                    <label class="form-check">
-                                        <input class="form-check-input" value="" type="checkbox">
-                                        <span class="form-check-label">
-                                            <span class="float-right badge badge-light round">5</span>
-                                            Samsung
-                                        </span>
-                                    </label>  <!-- form-check.// -->
-                                </form>
-                            </div> <!-- card-body.// -->
-                        </div> <!-- collapse .// -->
-                    </article> <!-- card-group-item.// -->
                 </div> <!-- card.// -->
             </aside> <!-- col.// -->
             <main class="col-sm-9">
-            <%= render "./catalog/card-products" %>
+
         </div>    
     </div>
 </section>

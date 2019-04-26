@@ -47,10 +47,9 @@
 UIkit bootstrap-ecommerce.com 
 ===================== */
 /* ==================== INCLUDE FONTS ======================= */
-@import url("../fonts/Montserrat-Regular.ttf");
-html {
-  font-size: 15px; }
-
+html, body{
+  font-family: 'Montserrat-Regular';
+}
 /* ================== HELPERS  =================== */
 a:hover {
   text-decoration: none; }
@@ -1976,7 +1975,7 @@ ul.row, ul.row-sm {
     padding-top: 4px;
     margin-top: 4px; }
   .card-product .bottom-wrap {
-    padding: 15px;
+    padding: 16px;
     border-top: 1px solid #eee; }
   .card-product .title {
     margin-top: 0; }
@@ -2299,8 +2298,6 @@ ul.row, ul.row-sm {
 /*# sourceMappingURL=ui.css.map */
 
 /* ================= NAVBAR WELCOME INDEX============== */
-
-
 .navbar{
   background:rgba(0,0,0,.7) !important;
 }
@@ -2342,4 +2339,23 @@ ul.row, ul.row-sm {
   margin-right: 10%;
   margin-left: 10%;
   text-align: center
+}
+
+.btn-sm{
+  border-radius: 0%;
+}
+
+.products_card-container{
+  margin-top: 2em;
+  margin-left: 4em;
+  margin-right: 4em;
+  margin-bottom: 2em;
+}
+
+.btn-info{
+  background: #0288d1;
+}
+
+.btn-cart{
+  background: #fbc02d;
 }
