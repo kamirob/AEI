@@ -66,3 +66,5 @@ gem 'popper_js'
 gem 'image_processing', '~> 1.2'
 gem 'mini_magick', '~> 4.8'
 gem 'font-awesome-rails'
+# Register with devise and Facebook
+gem 'omniauth-facebook'

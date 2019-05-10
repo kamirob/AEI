@@ -24,8 +24,11 @@
             </li> -->
             <div class="widget-header">
 				<small class="title text-muted">Bienvenido!</small>
-				<div class="sign-login"> <a href="#">Ingresar</a> <span class="bar-transparent"> | </span>
-				<a href="#"> Regístrate</a></div>
+				<div class="sign-login">
+                    <%= link_to "Ingresar", new_user_session_path, class:"text-menu"%>
+                    <span class="bar-transparent">|</span>
+                    <%= link_to "Registrate", new_user_registration_path, class:"text-menu"%>
+                </div>
 			</div>
         </ul>
 
