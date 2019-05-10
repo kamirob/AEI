@@ -27,4 +27,4 @@
 /config/master.key
 
 # Ignore tokens facabook
-devise.rb
+/config/initializers/devise.rb
