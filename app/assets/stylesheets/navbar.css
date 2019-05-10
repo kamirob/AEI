@@ -2295,21 +2295,28 @@ ul.row, ul.row-sm {
     display: block;
     margin-left: 0px; }
 
-/*# sourceMappingURL=ui.css.map */
-
 /* ================= NAVBAR WELCOME INDEX============== */
 .navbar{
   background:rgba(0,0,0,.7) !important;
 }
 
 .nav-link{
-  font-size: 1.3em;
+  font-size: 1em;
+  padding-top: 0.3em;
+}
+
+.icon-cart{
+  font-size: 2em;
+}
+
+.bar-transparent{
+  color: white;
 }
 
 /* ================= CARROUSEL WELCOME INDEX============== */
 
 .img-responsive{
-  min-width:100%;
+  max-width: 100%;
 }
 
 #background-carousel{

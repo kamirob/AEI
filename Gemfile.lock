@@ -233,7 +233,7 @@ DEPENDENCIES
   byebug
   capybara (>= 2.15)
   chromedriver-helper
-  devise (= 4.6.2)
+  devise
   font-awesome-rails
   image_processing (~> 1.2)
   jbuilder (~> 2.5)
