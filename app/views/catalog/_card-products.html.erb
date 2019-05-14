@@ -1,40 +1,62 @@
 <div class="row">
-  <div class="col-md-12">
+  <div class="d-flex flex-row flex-wrap">
   <% @products.each do |product|%>
-    <div class="col-md-4">
-      <figure class="card">
-        <figcaption class="info-wrap">
-            <h4 class="title"><%=product.name%></h4>
-            <p class="desc">Para más información selecciona el producto</p>
-            <div class="rating-wrap">
-              <ul class="rating-stars">
-                <li style="width:80%" class="stars-active"> 
-                  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
-                </li>
-                <li>
-                  <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
-                </li>
-              </ul>
-              <div class="label-rating">132 vistas</div>
-              <div class="label-rating">154 compras </div>
-            </div> <!-- rating-wrap.// -->
-        </figcaption>
-        <div class="row">
-          <div class="col-md-12">
-                        
-              <button class="col-md-12 btn btn-sm btn-info" style="font-size: 20px;" type="button"><i class="fa fa-info-circle"></i></button>
+    <figure class="card card-block col-md-2" id="products-card">
+      <figcaption class="info-wrap">
+          <h4 class="title"><%=product.name%></h4>
+          <p class="desc">Para más información selecciona el producto</p>
+          <div class="rating-wrap">
+            <ul class="rating-stars">
+              <li style="width:80%" class="stars-active"> 
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i>
+              </li>
+              <li>
+                <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i> 
+              </li>
+            </ul>
+            <div class="label-rating">132 vistas</div>
+            <div class="label-rating">154 compras </div>
+          </div> <!-- rating-wrap.// -->
+      </figcaption>
+      <div class="row">
+        <div class="col-md-12">
+                      
+            <button class="col-md-12 btn btn-sm btn-info" style="font-size: 20px;" type="button"><i class="fa fa-info-circle"></i></button>
 
-              <button class="col-md-12 btn btn-sm btn-cart" style="font-size: 20px;" type="button"><i class="fa fa-cart-plus"></i></button>
-            
-          </div>  
+            <button class="col-md-12 btn btn-sm btn-cart" style="font-size: 20px;" type="button"><i class="fa fa-cart-plus"></i></button>
+          
         </div>  
-        <div class="bottom-wrap center">
-          <div class="price-wrap h5">
-            <span class="price-new">$<%=product.price%></span> <del class="price-old">$48000</del>
-          </div> <!-- price-wrap.// -->
-        </div> <!-- bottom-wrap.// -->
-      </figure>
-    </div> <!-- col // --> 
+      </div>  
+      <div class="bottom-wrap center">
+        <div class="price-wrap h5">
+          <span class="price-new">$<%=product.price%></span> <del class="price-old">$48000</del>
+        </div> <!-- price-wrap.// -->
+      </div> <!-- bottom-wrap.// -->
+    </figure>
   <% end %> 
 </div>
-</div> 
+<!--<div class="row">
+  <div class="d-flex flex-row flex-wrap">
+    <% @products.each do |product|%>
+      <div class="card card-block col-md-2" id="products-card">
+        <img class="card-img" src="..." alt="Vans">
+        <div class="card-img-overlay d-flex justify-content-end">
+          <a href="#" class="card-link text-danger like">
+            <i class="fa fa-heart"></i>
+          </a>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"><%=product.name%></h4>
+          <h6 class="card-subtitle mb-2 text-muted">Ref: VA33TXRJ5</h6>
+          <p class="card-text">...</p>
+          
+          <div class="buy d-flex justify-content-between align-items-center">
+            <div class="price text-success"><%=product.price%><h5 class="mt-4"></h5></div>
+            <del class="price-old"><%=product.price%><h5 class="mt-4"></h5></del>
+            <a href="#" class="btn btn-danger mt-3"><i class="fa fa-shopping-cart"></i> Comprar</a>
+          </div>
+        </div>
+      </div>
+    <% end %> 
+  </div>  
+</div>  -->

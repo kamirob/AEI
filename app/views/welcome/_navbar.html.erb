@@ -1,25 +1,33 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand"> <%= image_tag("nav/AEI.png", class: "img-responsive", id: "navbar-logo", size: "130x85") %></a>
+    <a class="navbar-brand"> 
+        <%= image_tag("nav/AEI.png", class: "img-responsive", id: "navbar-logo", size: "130x85") %>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbar1">
-       
+        
         <ul class="navbar-nav ml-auto">
+            
+            <div class="search-bar">
+                <input class="search__input" type="text" placeholder="Buscar">
+            </div>
+
             <div class="widget-header">
-				<small class="title text-muted">Bienvenido!</small>
-				<div class="sign-login">
-                    <%= link_to "Ingresar", new_user_session_path, class:"text-menu"%>
-                    <span class="bar-transparent">|</span>
-                    <%= link_to "Registrate", new_user_registration_path, class:"text-menu"%>
-                </div>
+                <% if current_user%>
+                    <span class="text-menu">
+                        <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "text-menu"%>
+                    </span>   
+                <% else %>
+				<!--<small class="title text-muted">Bienvenido!</small>-->
+                    <div class="sign-login">
+                        <%= link_to "Ingresar", new_user_session_path, class:"text-menu"%>
+                        <span class="bar-transparent">|</span>
+                        <%= link_to "Registrate", new_user_registration_path, class:"text-menu"%>
+                    </div>
+                <% end %>
 			</div>
         </ul>
-
-        <div class="form-inline my-2 my-lg-0 container-search">
-            <input type="text" placeholder="Buscar">
-            <div class="search"></div>
-        </div>
 
     </div>
 </nav>

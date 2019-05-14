@@ -2306,17 +2306,16 @@ ul.row, ul.row-sm {
   min-height:100%;
 }
 
-.nav-link{
-  font-size: 1em;
-  padding-top: 0.3em;
-}
-
 .icon-cart{
   font-size: 2em;
 }
 
 .bar-transparent{
   color: white;
+}
+
+a.text-menu{
+  color: #0288d1;
 }
 
 /* ================= CARROUSEL WELCOME INDEX============== */
@@ -2343,12 +2342,14 @@ ul.row, ul.row-sm {
   border-radius: 0%;
 }
 
-
-
 .btn-info{
   background: #0288d1;
 }
 
 .btn-cart{
   background: #fbc02d;
+}
+
+#products-card{
+  margin: 10px;
 }
