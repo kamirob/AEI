@@ -68,3 +68,5 @@ gem 'mini_magick', '~> 4.8'
 gem 'font-awesome-rails'
 # Register with devise and Facebook
 gem 'omniauth-facebook'
+gem "aws-sdk-s3", require: false
+gem 'mini_magick', '~> 4.8'

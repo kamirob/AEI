@@ -2297,13 +2297,14 @@ ul.row, ul.row-sm {
 
 /* ================= NAVBAR WELCOME INDEX============== */
 
-.main-content{
-  margin: 0%;
-}
+
 .navbar{
-  background:rgba(0,0,0,.7) !important;
-  min-width:100%;
-  min-height:100%;
+  background:rgba(0,0,0,.8) !important;
+}
+
+.navbar-brand{
+  margin-left: 1%;
+  margin-right: 3%;
 }
 
 .icon-cart{
@@ -2311,13 +2312,37 @@ ul.row, ul.row-sm {
 }
 
 .bar-transparent{
-  color: white;
+  color: rgba(250, 245, 245, 0.582);
 }
 
 a.text-menu{
   color: #0288d1;
 }
 
+.search-input{
+  width: 50%;
+  background-color: transparent;
+  border: 1.5px solid #575756;
+  border-right: none;
+  border-top-left-radius: 100px;
+  border-bottom-left-radius: 100px;
+  background-position: 100% center;
+  text-align: center;
+  color: white;
+}
+
+.btn-search{
+  background-color: #0288d1;
+  border-top-right-radius: 100px;
+  border-bottom-right-radius: 100px;
+  background-position: 100% center;
+  color: white;
+}
+
+.btn-shopping-cart{
+  font-size: 28px;
+  color: white
+}
 /* ================= CARROUSEL WELCOME INDEX============== */
 
 #background-carousel{
