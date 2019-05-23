@@ -1,6 +1,14 @@
 html, body{
   font-family: 'Montserrat-Regular';
 }
+
+.container{
+  margin:0;
+}
+
+a:hover {
+  text-decoration: none;
+}
 /* ================= NAVBAR WELCOME INDEX============== */
 
   .navbar{
