@@ -130,7 +130,7 @@ a:hover {
 
 /*====================================SIGN-UP-FORM============================*/
 
-.sign-up-container{
+.sign-up-container, .sign-in-container{
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
   min-height: 100vh; /* These two lines are counted as one :-)       */
   display: flex;
@@ -140,9 +140,16 @@ a:hover {
   margin-left:10%;
 }
 
-.sign-up-form{
-  margin:10%;
-  padding: 2%;
+.sign-up-form, .sign-in-form{
+  margin-left:8%;
+  margin-right:8%;
+  margin-top: 12%;
+  margin-bottom: 10%;
+}
+
+.title-sign-up, .title-sign-in{
+  margin-bottom: 20%;
+  text-align: center;
 }
 
 .input-signup{
@@ -154,8 +161,12 @@ a:hover {
   border-bottom: 1px solid #0289d148;;
 }
 
+.remember_me{
+  text-align: center;
+}
+
 .input-signup:hover{
-  border-bottom: 2px solid #0288d1;
+  border-bottom: 1px solid #0288d1;
 }
 
 .btn-signup{
@@ -166,6 +177,37 @@ a:hover {
   padding:10px;
   width: 100%;
   margin-top: 5%;
+  font-size: 0.85em;
+}
+
+.btn-signup-facebook{
+  background-color: white;
+  color: #3b5998;
+  border: 1px solid #3b5998;
+  border-radius: 5px;
+  padding:10px;
+  width: 100%;
+  margin-top: 5%;
+  font-size: 0.85em;
+  text-decoration: none;
+}
+
+.btn-signup-facebook:hover{
+  color: white;
+  background-color: #3578e5;
+}
+
+.container-return-login, .container-return-signup{
+  text-align: center;
+  font-size: 0.9em;
+}
+
+hr {
+  border:none;
+  background-color: rgba(112, 111, 111, 0.404);
+  color: rgba(112, 111, 111, 0.404);
+  height: 1px;
+  width: 100%;
 }
 
 label{
