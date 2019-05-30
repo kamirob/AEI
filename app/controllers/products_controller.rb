@@ -1,6 +1,24 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def generate_pdf
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  pdf: "Factura",
+             template: 'products/generate_pdf.pdf.erb',
+             page_size: 'Letter',
+             zoom: 1,
+             background: true,
+             margin: {
+               top: 0,
+               bottom:0,
+               left:0,
+               right:0 
+        }
+      end
+    end
+  end
   # GET /products
   # GET /products.json
   def index
