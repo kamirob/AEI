@@ -7,10 +7,11 @@
   <div class="row container-button-newproduct float-right"> 
     <div class="col-md-12">
       <%= link_to '<i class="fas fa-file-download"></i> Generar PDF'.html_safe, generate_pdf_path(format: :pdf), class: 'btn-generate-pdf' %>
-      <%= link_to '<i class="fa fa-plus-circle"></i> Nuevo Producto'.html_safe, new_product_path, class: 'btn-new-product'%>
+      <%= link_to '<i class="fa fa-plus-circle"></i> Nuevo Producto'.html_safe, new_product_path,:remote => true, 'data-toggle' =>  "modal", 'data-target' => 'product-new', class: 'btn-new-product'%>
     </div>  
   </div>
-
+ 
+  </div>
   <div class="table-responsive-sm">
     <table class="table">
       <thead class=thead-border>
@@ -45,5 +46,6 @@
         <% end %>
       </tbody>
     </table>
+     <div id="product-new" style="display:none;"></div>
   </div>
 </div>

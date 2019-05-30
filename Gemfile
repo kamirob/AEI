@@ -74,3 +74,4 @@ gem "cancan"
 #  Generate PDF
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
+gem 'bootstrap-modal-rails'
