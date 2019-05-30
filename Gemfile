@@ -69,4 +69,8 @@ gem 'font-awesome-rails'
 # Register with devise and Facebook
 gem 'omniauth-facebook'
 gem "aws-sdk-s3", require: false
+# Users permits
 gem "cancan"
+#  Generate PDF
+gem 'wicked_pdf'
+gem 'wkhtmltopdf-binary'
