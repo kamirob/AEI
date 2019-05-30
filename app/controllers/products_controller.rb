@@ -1,6 +1,24 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: [:show, :edit, :update, :destroy]
 
+  def generate_pdf
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render  pdf: "Factura",
+             template: 'products/generate_pdf.pdf.erb',
+             page_size: 'Letter',
+             zoom: 1,
+             background: true,
+             margin: {
+               top: 0,
+               bottom:0,
+               left:0,
+               right:0 
+        }
+      end
+    end
+  end
   # GET /products
   # GET /products.json
   def index
@@ -15,6 +33,10 @@ class ProductsController < ApplicationController
   # GET /products/new
   def new
     @product = Product.new
+    respond_to do |f|
+      f.html
+      f.js 
+    end  
   end
 
   # GET /products/1/edit
@@ -30,9 +52,11 @@ class ProductsController < ApplicationController
       if @product.save
         format.html { redirect_to @product, notice: 'Product was successfully created.' }
         format.json { render :show, status: :created, location: @product }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @product.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
@@ -69,6 +93,6 @@ class ProductsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def product_params
-      params.require(:product).permit(:name, :description, :price, uploads: [])
+      params.require(:product).permit(:name, :description, :sale_price, :purchase_price, :sku, :stock, :state, uploads: [])
     end
 end

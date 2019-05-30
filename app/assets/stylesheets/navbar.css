@@ -213,3 +213,50 @@ hr {
 label{
   color: gray;
 }
+
+/*====================================PRODUCTS============================*/
+
+.container-products{
+  margin-top:4%;
+  margin-right:5%;
+  margin-left: 5%; 
+}
+
+.title-products{
+  margin-bottom: 2%;
+}
+
+.container-button-newproduct{
+  margin-bottom: 4%;
+}
+
+.thead-border{
+  border-radius: 10px;
+}
+
+.btn-new-product{
+  background-color: #0288d1;
+  color: white !important;
+  border: none;
+  border-radius: 5px;
+  padding:10px;
+  width: 100%;
+  margin-top: 5%;
+  font-size: 0.85em;
+}
+
+.btn-generate-pdf{
+  background-color: white;
+  color:#0288d1!important;
+  border: #0288d1 solid 1px;
+  border-radius: 5px;
+  padding:10px;
+  width: 100%;
+  margin-top: 5%;
+  font-size: 0.85em;
+}
+
+.edit-product, .delete-product{
+  color: grey;
+  font-size: 20px;
+}

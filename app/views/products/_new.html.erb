@@ -1,0 +1,75 @@
+<div id="myModal" class="modal fade" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title-centered">Nuevo Producto</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <%= form_for @product, remote: true do |f| %>
+            <% if @product.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= pluralize(product.errors.count, "error") %> prohibited this product from being saved:</h2>
+
+                    <ul>
+                    <% product.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                </div>
+            <% end %>
+
+            <div class="field">
+                <%= f.label :Nombre %>
+                <%= f.text_field :name %>
+            </div>
+
+            <div class="field">
+                <%= f.label :Descripción %>
+                <%= f.text_area :description %>
+            </div>
+
+            <div class="field">
+                <%= f.label :Precio_de_compra %>
+                <%= f.number_field :purchase_price %>
+            </div>
+            
+            <div class="field">
+                <%= f.label :Precio_de_venta %>
+                <%= f.number_field :sale_price %>
+            </div>
+
+            <div class="field">
+                <%= f.label :SKU %>
+                <%= f.text_field :sku %>
+            </div>
+
+            <div class="field">
+                <%= f.label :Stock %>
+                <%= f.number_field :stock %>
+            </div>
+
+            <div class="field">
+                <%= f.label :Estado %>
+                <%= f.check_box :state %>
+            </div>
+
+            <%= f.label :uploads%>
+            <%= f.file_field :uploads, multiple: true%>
+
+            <div class="departments-dropdown">
+                <%= f.collection_select(:category_ids, Category.all, :id, :name, { include_blank: "Categoría"},  {class: "btn btn-default dropdown-toggle"}) %>
+            </div> 
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                <div class="actions">
+                    <%= f.submit 'Crear'%>
+                </div>
+            </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

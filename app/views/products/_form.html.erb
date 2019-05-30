@@ -12,18 +12,38 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :name %>
+    <%= form.label :Nombre %>
     <%= form.text_field :name %>
   </div>
 
   <div class="field">
-    <%= form.label :description %>
+    <%= form.label :Descripción %>
     <%= form.text_area :description %>
   </div>
 
   <div class="field">
-    <%= form.label :price %>
-    <%= form.number_field :price %>
+    <%= form.label :Precio_de_compra %>
+    <%= form.number_field :purchase_price %>
+  </div>
+  
+  <div class="field">
+    <%= form.label :Precio_de_venta %>
+    <%= form.number_field :sale_price %>
+  </div>
+
+  <div class="field">
+    <%= form.label :SKU %>
+    <%= form.text_field :sku %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Stock %>
+    <%= form.number_field :stock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Estado %>
+    <%= form.check_box :state %>
   </div>
 
   <%= form.label :uploads%>
