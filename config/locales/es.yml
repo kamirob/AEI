@@ -1,0 +1,73 @@
+es:
+  administrate:
+    actions:
+      confirm: ¿Estás seguro?
+      destroy: Destruir
+      edit: Editar
+      edit_resource: Editar %{name}
+      show_resource: Mostrar %{name}
+      new_resource: Nuevo %{name}
+      back: Volver
+    controller:
+      create:
+        success: "%{resource} fue creado exitosamente."
+      destroy:
+        success: "%{resource} fue destruido exitosamente."
+      update:
+        success: "%{resource} fue actualizado exitosamente."
+    fields:
+      has_many:
+        more: Mostrando %{count} de %{total_count}
+        none: Ninguno
+    form:
+      error: error
+      errors: "%{pluralized_errors} prohibited this %{resource_name} from being saved:"
+    search:
+      clear: Borrar búsqueda
+      label: Buscar %{resource}
+  activerecord:
+    errors:
+    messages:
+      record_invalid: "La validación falló: %{errors}"
+      restrict_dependent_destroy:
+      has_one: El registro no puede ser eliminado pues existe un %{record} dependiente
+      has_many: El registro no puede ser eliminado pues existen %{record} dependientes
+    models:
+      user:
+        one: "Usuario"
+        other: "Usuarios"
+      category:
+        one: "Categoria"
+        other: "Categorias"
+      product:
+        one: "Producto"
+        other: "Productos" 
+      attributes:
+        user:
+          id: "id"
+          email: "Correo Electrónico"
+          encrypted_password: "Contraseña"
+          reset_password_token: "Reset Contraseña"
+          reset_password_sent_at: "Otro"
+          remember_created_at: "Recordar"
+          created_at: "Fecha creación"
+          updated_at: "Fecha actualización"
+          provider: "Tipo de sesión"
+          uid: "UID"
+          role: "Rol"
+        product:
+          name: "Nombre"
+          description: "Descripción"
+          state: "Estado"
+          purchase_price: "Precio de compra"  
+          sale_price: "Precio de venta"  
+          uploads_attachments: "uploads_attachments"
+          uploads_blobs: "uploads_attachments"
+          categories: "categories"
+          id: "id"
+          price: "Precio"
+          created_at: "Creado en"
+          updated_at: "Actualizado en"
+          stock: "Stock"
+          sku: "SKU"
+   
