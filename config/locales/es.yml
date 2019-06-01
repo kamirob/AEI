@@ -2,7 +2,7 @@ es:
   administrate:
     actions:
       confirm: ¿Estás seguro?
-      destroy: Destruir
+      destroy: Eliminar
       edit: Editar
       edit_resource: Editar %{name}
       show_resource: Mostrar %{name}
@@ -10,11 +10,11 @@ es:
       back: Volver
     controller:
       create:
-        success: "%{resource} fue creado exitosamente."
+        success: "%{resource} creado exitosamente."
       destroy:
-        success: "%{resource} fue destruido exitosamente."
+        success: "%{resource} eliminado exitosamente."
       update:
-        success: "%{resource} fue actualizado exitosamente."
+        success: "%{resource} actualizado exitosamente."
     fields:
       has_many:
         more: Mostrando %{count} de %{total_count}
@@ -25,6 +25,7 @@ es:
     search:
       clear: Borrar búsqueda
       label: Buscar %{resource}
+
   activerecord:
     errors:
     messages:

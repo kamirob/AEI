@@ -19,8 +19,9 @@ By default, it renders:
   <meta name="ROBOTS" content="NOODP">
   <!--<meta name="viewport" content="initial-scale=1">-->
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <%= favicon_link_tag asset_path('AEI.png')%>
   <title>
-    <%= content_for(:title) %> - <%= Rails.application.class.parent_name.titlecase %>
+    <%= content_for(:title) %> - AEI
   </title>
   <%= render "stylesheet" %>
   <%= csrf_meta_tags %>
