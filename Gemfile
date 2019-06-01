@@ -75,3 +75,4 @@ gem "cancan"
 gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 gem 'bootstrap-modal-rails'
+gem "administrate"
