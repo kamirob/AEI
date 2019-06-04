@@ -77,7 +77,6 @@ gem 'wicked_pdf'
 gem 'wkhtmltopdf-binary'
 
 gem 'bootstrap-modal-rails'
-gem 'trestle'
 
 # Export Excel
 gem 'rubyzip', '>= 1.2.1'
