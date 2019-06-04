@@ -3,6 +3,7 @@ Trestle.configure do |config|
   #
   # Set the page title shown in the main header within the admin.
   #
+
   config.site_title = "AEI"
 
   # Specify a custom image to be used in place of the site title for mobile and
@@ -88,9 +89,9 @@ Trestle.configure do |config|
 
   # Specify a custom hook to be injected into the admin.
   #
-  # config.hook(:stylesheets) do
-  #   stylesheet_link_tag "custom"
-  # end
+  config.hook(:stylesheets) do
+    stylesheet_link_tag "navbar"
+  end
 
   # Toggle whether Turbolinks is enabled within the admin.
   # Defaults to true if Turbolinks is available.
@@ -123,10 +124,8 @@ Trestle.configure do |config|
   #
   # Enable debugging of form errors. Defaults to true in development mode.
   #
-  # config.debug_form_errors = true
-  #config.hook("view.header") do
-    #render "admin/header"
- #end
+  config.debug_form_errors = true
+ 
 end
 require 'trestle-devise/controller_methods'
 Trestle::ApplicationController.send(:include, Trestle::Auth::ControllerMethods)
