@@ -1,77 +1,94 @@
 es:
-  administrate:
-    actions:
-      confirm: ¿Estás seguro?
-      destroy: Eliminar
-      edit: Editar
-      edit_resource: Editar %{name}
-      show_resource: Mostrar %{name}
-      new_resource: Nuevo %{name}
-      back: Volver
-    controller:
-      create:
-        success: "%{resource} creado exitosamente."
-      destroy:
-        success: "%{resource} eliminado exitosamente."
-      update:
-        success: "%{resource} actualizado exitosamente."
-    fields:
-      has_many:
-        more: Mostrando %{count} de %{total_count}
-        none: Ninguno
-    form:
-      error: error
-      errors: "%{pluralized_errors} prohibited this %{resource_name} from being saved:"
-    search:
-      clear: Borrar búsqueda
-      label: Buscar %{resource}
+  trestle:
+    title: "Trestle Administrador"
+    footer: "Patrocinado por Trestle"
+    version: "Version"
 
-  activerecord:
-    errors:
-    messages:
-      record_invalid: "La validación falló: %{errors}"
-      restrict_dependent_destroy:
-      has_one: El registro no puede ser eliminado pues existe un %{record} dependiente
-      has_many: El registro no puede ser eliminado pues existen %{record} dependientes
-    models:
-      user:
-        one: "Usuario"
-        other: "Usuarios"
-      category:
-        one: "Categoria"
-        other: "Categorias"
-      product:
-        one: "Producto"
-        other: "Productos" 
-      client:
-        one: "Cliente"
-        other: "Clientes"  
-      attributes:
-        user:
-          id: "id"
-          email: "Correo Electrónico"
-          encrypted_password: "Contraseña"
-          reset_password_token: "Reset Contraseña"
-          reset_password_sent_at: "Otro"
-          remember_created_at: "Recordar"
-          created_at: "Fecha creación"
-          updated_at: "Fecha actualización"
-          provider: "Tipo de sesión"
-          uid: "UID"
-          role: "Rol"
-        product:
-          name: "Nombre"
-          description: "Descripción"
-          state: "Estado"
-          purchase_price: "Precio de compra"  
-          sale_price: "Precio de venta"  
-          uploads_attachments: "uploads_attachments"
-          uploads_blobs: "uploads_attachments"
-          categories: "categories"
-          id: "id"
-          price: "Precio"
-          created_at: "Creado en"
-          updated_at: "Actualizado en"
-          stock: "Stock"
-          sku: "SKU"
-   
+    helpers:
+      page_entries_info:
+        one_page:
+          display_entries:
+            zero: "No %{entry_name} encontrado"
+            one: "Mostrando <strong>1</strong> %{entry_name}"
+            other: "Mostrando <strong>total %{count}</strong> %{entry_name}"
+
+        more_pages:
+          display_entries: "Mostrando %{entry_name} <strong>%{first}&nbsp;-&nbsp;%{last}</strong> of <b>%{total}</b>"
+
+    onboarding:
+      welcome: "Bienvenido a Trestle"
+      no_admins: "Para poder ingresar, por favor crea una cuenta de administrador en <code>app/admin</code>."
+      no_template: "Para personalizar esta plantilla, por favor crea <code>%{path}</code>."
+      no_form: "Por favor define una forma de bloque o crea un parcial <code>_form.html</code>."
+
+    ui:
+      toggle_navigation: "Cambiar (modo de) navegación"
+      toggle_sidebar: "Alternar la barra lateral"
+
+    dialog:
+      error: "La solicitud no pudo ser completada."
+
+    confirmation:
+      title: "¿Estás seguro?"
+      delete: "Borrar"
+      cancel: "Cancelar"
+
+  admin:
+    titles:
+      index: "Listado de %{pluralized_model_name}"
+      new: "Nuevo %{model_name}"
+      edit: "Editando %{model_name}"
+
+    buttons:
+      new: "Nuevo %{model_name}"
+      save: "Guardar %{model_name}"
+      delete: "Borrar %{model_name}"
+      ok: "Aceptar"
+
+    breadcrumbs:
+      home: "Inicio"
+
+    flash:
+      create:
+        success:
+          title: "¡Exito!"
+          message: "El %{lowercase_model_name} fue creado exitosamente."
+
+        failure:
+          title: "¡Advertencia!"
+          message: "Por favor corrige los siguientes errores."
+
+      update:
+        success:
+          title: "¡Exito!"
+          message: "El %{lowercase_model_name} se actualizo exitosamente."
+
+        failure:
+          title: "¡Advertencia!"
+          message: "Por favor corrige los siguientes errores."
+
+      destroy:
+        success:
+          title: "¡Exito!"
+          message: "El %{lowercase_model_name} fue borrado exitosamente."
+
+        failure:
+          title: "¡Advertencia!"
+          message: "%{lowercase_model_name} no pudo ser borrado."
+
+    table:
+      headers:
+        id: "ID"
+
+    form:
+      select:
+        prompt: "- Selecciona %{attribute_name} -"
+
+    format:
+      blank: "Ninguno"
+
+    datepicker:
+      formats:
+        date: "m/d/Y"
+        datetime: "m/d/Y h:i K"
+        time: "h:i K"
