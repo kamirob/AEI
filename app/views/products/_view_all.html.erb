@@ -6,7 +6,8 @@
   </div> 
   <div class="row container-button-newproduct float-right"> 
     <div class="col-md-12">
-      <%= link_to 'Exportar Excel',products_path(format: :xlsx)%>
+      <%= link_to 'Descargar Excel',products_path(format: :xlsx)%>
+      <%= link_to 'Cargar Excel',new_products_import_path %>
       <%= link_to '<i class="fas fa-file-download"></i> Generar PDF'.html_safe, generate_pdf_path(format: :pdf), class: 'btn-generate-pdf' %>
       <%= link_to '<i class="fa fa-plus-circle"></i> Nuevo Producto'.html_safe, new_product_path,:remote => true, 'data-toggle' =>  "modal", 'data-target' => 'product-new', class: 'btn-new-product'%>
     </div>  
