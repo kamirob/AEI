@@ -15,7 +15,6 @@ Trestle.resource(:clients) do
     column :email, align: :center
     column :phone, align: :center
     column :cell_phone, align: :center
-    actions
   end
 
   # Customize the form fields shown on the new/edit views.
@@ -41,4 +40,5 @@ Trestle.resource(:clients) do
   # params do |params|
   #   params.require(:client).permit(:name, ...)
   # end
+ 
 end
