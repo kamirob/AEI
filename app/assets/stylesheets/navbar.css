@@ -218,7 +218,7 @@ label{
 /*====================================PRODUCTS============================*/
 
 .container-products{
-  margin-top:4%;
+  margin-top:5%;
   margin-right:5%;
   margin-left: 5%; 
 }
@@ -238,6 +238,7 @@ label{
 .btn-new-product{
   background-color: #0288d1;
   color: white !important;
+  border: #0288d1 solid 1px;
   border: none;
   border-radius: 5px;
   padding:10px;
@@ -246,9 +247,32 @@ label{
   font-size: 0.85em;
 }
 
+.btn-new-product:hover{
+  background-color: white;
+  color: #0288d1 !important;
+  border: #0288d1 solid 1px;
+}
+
+.btn-excel{
+  background-color: #1D6F42;
+  color: white !important;
+  border: #1D6F42 solid 1px;
+  border: none;
+  border-radius: 5px;
+  padding:10px;
+  width: 100%;
+  margin-top: 5%;
+  font-size: 0.85em;
+}
+
+.btn-excel:hover{
+  background-color: white;
+  color: #1D6F42 !important;
+  border: #1D6F42 solid 1px;
+}
 .btn-generate-pdf{
   background-color: white;
-  color:#0288d1!important;
+  color:#0288d1 !important;
   border: #0288d1 solid 1px;
   border-radius: 5px;
   padding:10px;
@@ -265,10 +289,44 @@ label{
 
 /*===================================SIDEBAR DASHBOARD STYLE============================== */
 
-.sidebar {
+.navbar {
+  padding: 15px 10px;
+  background: #fff;
+  border: none;
+  border-radius: 0;
+  margin-bottom: 40px;
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-btn {
+  box-shadow: none;
+  outline: none !important;
+  border: none;
+}
+
+.line {
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px dashed #ddd;
+  margin: 40px 0;
+}
+
+/* ---------------------------------------------------
+  SIDEBAR STYLE
+----------------------------------------------------- */
+
+.wrapper {
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+  perspective: 1500px;
+}
+
+
+#sidebar {
   min-width: 250px;
   max-width: 250px;
-  background: #212121;
+  background: #0288d1;
   color: #fff;
   transition: all 0.6s cubic-bezier(0.945, 0.020, 0.270, 0.665);
   transform-origin: bottom left;
@@ -281,12 +339,17 @@ label{
 
 #sidebar .sidebar-header {
   padding: 20px;
-  background: #212121;
+  background: #0288d1;
   text-align: center;
 }
 
+.dashboard{
+  font-size: 1.5em;
+  text-align: center; 
+}
+
 #sidebar ul.components {
-  padding: 20px;
+  padding: 20px 0;
   border-bottom: 1px solid #47748b;
 }
 
@@ -299,17 +362,10 @@ label{
   padding: 10px;
   font-size: 1.1em;
   display: block;
-  color: #fff;
 }
-
 #sidebar ul li a:hover {
-  color: #fff;
-  background: #0288d1;
-}
-
-#sidebar ul li.active > a, a[aria-expanded="true"] {
-  color: #fff;
-  background: #212121;
+  color: #0288d1;
+  background: #fff;
 }
 
 a[data-toggle="collapse"] {
@@ -400,4 +456,5 @@ a[data-toggle="collapse"] {
   #sidebarCollapse.active span:last-of-type {
       transform: rotate(-45deg) translate(1px, -1px);
   }
+
 }
