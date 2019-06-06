@@ -6,7 +6,7 @@
   </div>
   <div class="row container-button-newproduct float-right"> 
     <div class="col-md-12">
-      <%= link_to '<i class="fa fa-plus-circle"></i> Nuevo Cliente'.html_safe, new_client_path,:remote => true, 'data-toggle' =>  "modal", 'data-target' => 'new-client', class: 'btn-new-product'%>
+      <%= link_to '<i class="fa fa-plus-circle"></i> Nuevo Cliente'.html_safe, new_client_path, :remote => true, 'data-toggle' =>  "modal", 'data-target' => 'client-new', class: 'btn-new-product'%>
     </div>  
   </div>
   <div class="table-responsive-sm">
@@ -42,6 +42,6 @@
         <% end %>
       </tbody>
     </table>
-     <div id="new-client" style="display:none;"></div>
+     <div id="client-new" style="display:none;"></div>
   </div>
 </div>

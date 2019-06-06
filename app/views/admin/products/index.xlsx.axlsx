@@ -12,10 +12,10 @@ wb.styles do |style|
     # Add a blank row
     sheet.add_row []
     # Create the header row
-    sheet.add_row ["Id", "SKU", "Estado", "Stock", "Precio Compra", "Precio Ve], style: heading
+    sheet.add_row ["Id", "Nombre", "Descripción", "SKU", "Estado", "Stock", "Precio Compra", "Precio Venta"], style: heading
     # Create entries for each item
     @products.each do |product|
-      sheet.add_row [product.id, product.sku, product.state, product.stock, product.purchase_price]
+      sheet.add_row [product.id, product.name, product.description, product.sku, product.state, product.stock, product.purchase_price, product.sale_price]
     end
   end
 end

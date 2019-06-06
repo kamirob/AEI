@@ -11,7 +11,7 @@
                 <%= link_to "Productos", admin_path, class: "text-menu"%>
             </li>
             <li>
-                <%= link_to "Clientes", admin_clients_path, class: "text-menu"%>               
+                <%= link_to "Clientes", admin_clients_path, class: "text-menu"%>        
             </li>
             <% if current_user%>
             <li>
@@ -54,7 +54,7 @@
                 </div>
             </div>
         </nav>
-        <%= render 'products/view_products'%>    
+        <%= render 'clients/view_all'%>
 </div>
 
 <script type="text/javascript">
