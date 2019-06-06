@@ -1,0 +1,47 @@
+<div class="container-products">
+  <div class="row title-products">
+    <div class="col-md-6">
+      <h1>Clientes</h1>
+    </div>  
+  </div>
+  <div class="row container-button-newproduct float-right"> 
+    <div class="col-md-12">
+      <%= link_to '<i class="fa fa-plus-circle"></i> Nuevo Cliente'.html_safe, new_client_path, :remote => true, 'data-toggle' =>  "modal", 'data-target' => 'client-new', class: 'btn-new-product'%>
+    </div>  
+  </div>
+  <div class="table-responsive-sm">
+    <table class="table">
+      <thead class=thead-border>
+        <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Nit</th>
+            <th scope="col">Contacto</th>
+            <th scope="col">Dirección</th>
+            <th scope="col">Ciudad</th>
+            <th scope="col">Correo Electrónico</th>
+            <th scope="col">Teléfono</th>
+            <th scope="col">Celular</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @clients.each do |client| %>
+          <tr>
+            <td><%= client.name %></td>
+            <td><%= client.nit %></td>
+            <td><%= client.contact %></td>
+            <td><%= client.address %></td>
+            <td><%= client.location %></td>
+            <td><%= client.email %></td>
+            <td><%= client.phone %></td>
+            <td><%= client.cell_phone %></td>
+            <td><%= link_to '<i class="fa fa-edit edit-product"></i>'.html_safe, edit_client_path(client) %></td>
+            <% if can? :destroy, @client %>
+              <td><%= link_to 'Destroy', client, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>  
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+     <div id="client-new" style="display:none;"></div>
+  </div>
+</div>

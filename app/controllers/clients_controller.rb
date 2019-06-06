@@ -15,6 +15,10 @@ class ClientsController < ApplicationController
   # GET /clients/new
   def new
     @client = Client.new
+    respond_to do |f|
+      f.html
+      f.js 
+    end  
   end
 
   # GET /clients/1/edit
@@ -30,9 +34,11 @@ class ClientsController < ApplicationController
       if @client.save
         format.html { redirect_to @client, notice: 'Client was successfully created.' }
         format.json { render :show, status: :created, location: @client }
+        format.js
       else
         format.html { render :new }
         format.json { render json: @client.errors, status: :unprocessable_entity }
+        format.js
       end
     end
   end
