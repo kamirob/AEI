@@ -1,0 +1,65 @@
+<div id="myModal" class="modal fade" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.9);" data-backdrop="false">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title-centered">Nueva Factura</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <%= form_for @invoice, remote: true do |f| %>
+                <% if @invoice.errors.any? %>
+                    <div id="error_explanation">
+                    <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
+
+                    <ul>
+                    <% invoice.errors.full_messages.each do |message| %>
+                        <li><%= message %></li>
+                    <% end %>
+                    </ul>
+                    </div>
+                <% end %>
+
+                <div class="field-inactive">
+                    <%= f.label :prefix %>
+                    <%= f.text_field :prefix, class: 'inactive' %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :invoice_number %>
+                    <%= f.number_field :invoice_number %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :sub_total %>
+                    <%= f.number_field :sub_total %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :total %>
+                    <%= f.number_field :total %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :client_id %>
+                    <%= f.text_field :client_id %>
+                </div>
+
+                <div class="field">
+                    <%= f.label :product_id %>
+                    <%= f.text_field :product_id %>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <div class="actions">
+                        <%= f.submit 'Crear'%>
+                    </div>
+                </div>
+            <% end %>
+        </div>
+    </div>
+</div>
+          
+

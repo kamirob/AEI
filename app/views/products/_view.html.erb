@@ -1,7 +1,7 @@
 <div class="container-products">
   <div class="row title-products">
     <div class="col-md-6">
-      <h1>Productos</h1>
+      <h2>PRODUCTOS</h2>
     </div>  
   </div> 
   <div class="row container-button-newproduct float-right"> 
@@ -17,10 +17,9 @@
     <table class="table">
       <thead class=thead-border>
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
           <th scope="col">Descripción</th>
           <th scope="col">Precio de Compra</th>
-          <th scope="col">Nombre</th>
           <th scope="col">Precio de venta</th>
           <th scope="col">SKU</th>
           <th scope="col">Estado</th>
@@ -31,10 +30,9 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
-            <td><%= product.id %></td>
+            <td><%= product.name %></td>
             <td><%= product.description %></td>
             <td><%= product.purchase_price %></td>
-            <td><%= product.name %></td>
             <td><%= product.sale_price %></td>
             <td><%= product.sku %></td>
             <td><%= product.state %></td>

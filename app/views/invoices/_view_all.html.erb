@@ -1,0 +1,43 @@
+<div class="container-products">
+  <div class="row title-products">
+    <div class="col-md-6">
+      <h2>FACTURAS DE VENTA</h2>
+    </div>  
+    <div class="row container-button-newproduct float-right"> 
+      <div class="col-md-12">
+        <%= link_to '<i class="fa fa-plus-circle"></i> Nueva Factura'.html_safe, new_invoice_path, :remote => true, 'data-toggle' =>  "modal", 'data-target' => 'invoice-new', class: 'btn-new-product'%>
+      </div>  
+    </div>
+  </div>
+  <div class="table-responsive-sm">
+    <table class="table">
+      <thead class=thead-border>
+          <th scope="col">Prefijo</th>
+          <th scope="col">No. FV</th>
+          <th scope="col">Sub total</th>
+          <th scope="col">Total</th>
+          <th scope="col">Cliente</th>
+          <th scope="col">Producto</th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @invoices.each do |invoice| %>
+          <tr>
+            <td><%= invoice.prefix %></td>
+            <td><%= invoice.invoice_number %></td>
+            <td><%= invoice.sub_total %></td>
+            <td><%= invoice.total %></td>
+            <td><%= invoice.client %></td>
+            <td><%= invoice.product %></td>
+            <td><%= link_to '<i class="fa fa-edit edit-product"></i>'.html_safe, edit_invoice_path(invoice) %></td>
+            <% if can? :destroy, @invoice %>
+              <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            <% end %>  
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+    <div id="invoice-new" style="display:none;"></div>
+  </div>
+</div>

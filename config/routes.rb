@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
+  resources :invoices
   namespace :admin do
     resources :products
     resources :clients
+    resources :invoices
+
   end
   get 'admin' => 'admin/products#index'
   resources :clients
