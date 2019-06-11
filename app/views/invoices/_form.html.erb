@@ -6,12 +6,8 @@
             <div class="col-md-6">
                 <h2>NUEVA FACTURA</h2>
             </div>  
-            <div class="row container-button-newproduct float-right"> 
-                <div class="col-md-12">
-                    <%= f.submit 'Crear Factura', class: 'btn-new-product'%>
-                </div>  
-            </div>
         </div>
+       
         <% if @invoice.errors.any? %>
             <div id="error_explanation">
             <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
@@ -40,53 +36,40 @@
             <%= f.label :Cliente %>
             <%= f.text_field :client_id, data: {autocomplete_source: Client.order(:name).map(&:name)}, id: 'invoice_client_name' %>
         </div> 
-        
-        <div class="field">
-            <%= f.label :Sub_total %>
-            <%= f.number_field :sub_total %>
-        </div>
-
-        <div class="field">
-            <%= f.label :total %>
-            <%= f.number_field :total %>
-        </div>
-        
-        <!--<div class="clients-dropdown">
-            <%= f.collection_select(:product_id, Product.all, :id, :name, { include_blank: "Producto"},  {class: "btn btn-default dropdown-toggle"}) %>
-        </div> -->
-
 
         <div class="row">
-            <div class="col-xs-12 table-responsive">
+            <div class="col-md-12 table-responsive">
                 <hr>
                 <table class="table table-hover" id="items">
             
-                <thead>
-                    <th class="item-name">Producto</th>
-                    <th class="description">Descripción</th>
-                    <th class="unit">Valor unit</th>
-                    <th class="quantity">Cantidad</th>
-                    <th class="units">Subtotal</th>
-                    <th class="no_print"></th>
-                </thead>
-            
-                <tbody>
-                    <tr class="item-row">
-                        <td> <%= f.text_field :product_id, data: {autocomplete_source: Product.order(:name).map(&:name)}, id: 'invoice_product_name', class: 'form-control item_name', placeholder: 'Nombre' %></td>
-                        <td><input class="form-control item_desc" placeholder="Descripción"/></td>
-                        <td><%= f.text_field :product_id, data: {autocomplete_source: Product.order(:sale_price).map(&:sale_price)}, id: 'invoice_product_sale_price', class: 'form-control cost', placeholder: 'Valor Unit' %></td>
-                        <td><input class="form-control qty" placeholder="Cantidad" /></td>
-                        <td class="price_td"><span class="price"></span><span class="subtotal_currency"></span></td>
-                        <td class="delete_td"><a class="delete" href="javascript:;" title="Remove row"><i class="fa fa-times"></i></span></a></td>
-                    </tr>
-     
-                    <tr id="hiderow">
-                        <td><a id="addrow" href="javascript:;" title="Agregar Producto"><span class="btn-new-product"><i class="fa fa-plus"></i>Agregar Producto</span></a></td>
-                    </tr>
-                </tbody>
+                    <thead>
+                        <th class="item-name">Producto</th>
+                        <th class="description">Descripción</th>
+                        <th class="unit">Valor unit</th>
+                        <th class="quantity">Cantidad</th>
+                        <th class="units">Subtotal</th>
+                        <th class="no_print"></th>
+                    </thead>
+                
+                    <tbody>
+                        <tr class="item-row">
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                    </tbody>
                 </table>
             </div>
         </div>
-
+        <div class="row container-button-newproduct"> 
+            <div class="col-md-12">
+                <%= link_to '<i class="fa fa-plus-circle"></i> Agregar Producto'.html_safe, add_product_path, :remote => true, 'data-toggle' =>  "modal", 'data-target' => 'add_products', class: 'btn-new-product'%>
+                <%= f.submit 'Crear Factura', class: 'btn-new-product'%>
+            </div>  
+        </div>
+        <div id="add-products" style="display:none;"></div>
     <% end %>
 </div>  

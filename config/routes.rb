@@ -4,8 +4,8 @@ Rails.application.routes.draw do
     resources :products
     resources :clients
     resources :invoices
-
   end
+  get :add_product, to: "invoices#add_product"
   get 'admin' => 'admin/products#index'
   resources :clients
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }

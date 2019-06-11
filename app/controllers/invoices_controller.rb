@@ -1,20 +1,23 @@
 class InvoicesController < ApplicationController
   before_action :set_invoice, only: [:show, :edit, :update, :destroy]
 
-  # GET /invoices
-  # GET /invoices.json
 
-  
   def index
     @invoices = Invoice.all
   end
 
-  # GET /invoices/1
-  # GET /invoices/1.json
+  def add_product
+    respond_to do |f|
+      f.html
+      f.js 
+    end  
+  end
+  
+
   def show
   end
 
-  # GET /invoices/new
+  
   def new
     @invoice = Invoice.new
     respond_to do |f|
@@ -23,12 +26,10 @@ class InvoicesController < ApplicationController
     end  
   end
 
-  # GET /invoices/1/edit
+ 
   def edit
   end
 
-  # POST /invoices
-  # POST /invoices.json
   def create
     @invoice = Invoice.new(invoice_params)
 

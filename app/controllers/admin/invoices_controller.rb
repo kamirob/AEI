@@ -7,7 +7,13 @@ class Admin::InvoicesController < ApplicationController
     @invoices = Invoice.all
     
   end
-
+  
+  def add_product
+    respond_to do |f|
+      f.html
+      f.js 
+    end  
+  end
   # GET /admin/invoices/1
   # GET /admin/invoices/1.json
   def show
