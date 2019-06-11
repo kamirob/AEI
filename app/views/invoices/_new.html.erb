@@ -8,15 +8,22 @@
         <ul class="list-unstyled components">
             <p class="dashboard">Dashboard</p>
              <li>
-                <%= link_to "Inicio", admin_clients_path, class: "text-menu"%>               
+                <%= link_to "Inicio", admin_path, class: "text-menu"%>
             </li>
             <li>
                 <%= link_to "Productos", admin_path, class: "text-menu"%>
             </li>
             <li>
-                <%= link_to "Clientes", admin_clients_path, class: "text-menu"%>               
+                <%= link_to "Clientes", admin_clients_path, class: "text-menu"%>        
             </li>
-            
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-menu">Facturación</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                                
+                    </li> 
+                </ul>
+            </li>
             <% if current_user%>
             <li>
                 <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "text-menu"%>
@@ -58,7 +65,7 @@
                 </div>
             </div>
         </nav>
-        <%= render 'products/view_products'%>    
+        <%= render 'invoices/form' %>
 </div>
 
 <script type="text/javascript">
@@ -67,5 +74,9 @@
             $('#sidebar').toggleClass('active');
             $(this).toggleClass('active');
         });
+    });
+
+    $('#invoice_client_name').autocomplete({
+        source: $('#invoice_client_name').data('autocomplete-source')
     });
 </script>

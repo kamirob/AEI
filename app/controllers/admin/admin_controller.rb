@@ -13,19 +13,21 @@ class Admin::AdminController < ApplicationController
         end
     end
     def show
-        @products = Product.all
-        @clients = Client.all
+      @products = Product.all
+      @clients = Client.all
+      @invoices = Invoice.all
     end
 
     
 
     def new
-        @product = Product.new
-        @client = Client.new
-        respond_to do |f|
-          f.html
-          f.js 
-        end  
+      @product = Product.new
+      @invoice = Invoice.new
+      @client = Client.new
+      respond_to do |f|
+        f.html
+        f.js 
+      end  
     end
   
 end

@@ -1,0 +1,6 @@
+<% if @product.state == true %>
+    $(".product-<%= @product.id %> > a").html('').removeClass('btn-warning').addClass('btn-success')
+<% else %>
+    $(".product-<%= @product.id %> > a").html('').removeClass('btn-success').addClass('btn-warning')
+<% end %>
+$("#product-status-<%= @product.id %>").html()

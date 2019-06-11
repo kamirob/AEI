@@ -15,6 +15,9 @@ class Admin::ProductsController < Admin::AdminController
     end
   end
 
+  def toggle_enable_status
+    @product.toggle!(:enabled)
+  end
   # GET /admin/products/1
   # GET /admin/products/1.json
   def show

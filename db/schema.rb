@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_06_02_165034) do
+ActiveRecord::Schema.define(version: 2019_06_07_165853) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -62,6 +62,19 @@ ActiveRecord::Schema.define(version: 2019_06_02_165034) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "invoices", force: :cascade do |t|
+    t.string "prefix", default: "AE"
+    t.integer "invoice_number"
+    t.integer "sub_total"
+    t.integer "total"
+    t.bigint "client_id"
+    t.bigint "product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_invoices_on_client_id"
+    t.index ["product_id"], name: "index_invoices_on_product_id"
+  end
+
   create_table "products", force: :cascade do |t|
     t.string "name"
     t.text "description"
@@ -95,4 +108,6 @@ ActiveRecord::Schema.define(version: 2019_06_02_165034) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories_products", "categories"
   add_foreign_key "categories_products", "products"
+  add_foreign_key "invoices", "clients"
+  add_foreign_key "invoices", "products"
 end
