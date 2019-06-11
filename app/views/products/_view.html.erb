@@ -6,7 +6,7 @@
   </div> 
   <div class="row container-button-newproduct float-right"> 
     <div class="col-md-12">
-      <%= link_to 'Cargar Excel',new_products_import_path %>
+      <!--<%= link_to 'Cargar Excel',new_products_import_path %>-->
       <%= link_to '<i class="fas fa-file-download"></i> Descargar Excel'.html_safe,admin_products_path(format: :xlsx), class: 'btn-excel'%>
       <!--<%= link_to '<i class="fas fa-file-download"></i> Generar PDF'.html_safe, generate_pdf_path(format: :pdf), class: 'btn-generate-pdf' %>-->
       <%= link_to '<i class="fa fa-plus-circle"></i> Nuevo Producto'.html_safe, new_product_path, :remote => true, 'data-toggle' =>  "modal", 'data-target' => 'product-new', class: 'btn-new-product'%>
@@ -17,26 +17,30 @@
     <table class="table">
       <thead class=thead-border>
         <tr>
-          <th scope="col">Nombre</th>
-          <th scope="col">Descripción</th>
-          <th scope="col">Precio de Compra</th>
-          <th scope="col">Precio de venta</th>
-          <th scope="col">SKU</th>
+          <th scope="col">Id</th>
           <th scope="col">Estado</th>
           <th scope="col">Stock</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Descripción</th>
+          <th scope="col">SKU</th>
+          <th scope="col">Precio de Compra</th>
+          <th scope="col">Precio de venta</th>
         </tr>
       </thead>
 
       <tbody>
         <% @products.each do |product| %>
           <tr>
+            <td><%= product.id %></td>
+            <td class="product-<%= product.state %>">
+                <%= link_to "#{ product.state ? '' : '' }", toggle_enable_status_product_path(product), method: :patch, remote: :true, class: "btn btn-xs btn-#{ product.state ? 'success' : 'danger' }"  %>
+            </td>
+            <td><%= product.stock %></td>
             <td><%= product.name %></td>
             <td><%= product.description %></td>
+            <td><%= product.sku %></td>
             <td><%= product.purchase_price %></td>
             <td><%= product.sale_price %></td>
-            <td><%= product.sku %></td>
-            <td><%= product.state %></td>
-            <td><%= product.stock %></td>
             <td><%= link_to '<i class="fa fa-edit edit-product"></i>'.html_safe, edit_product_path(product) %></td>
             <% if can? :destroy, @product %>
               <td><%= link_to '<i class="fa fa-trash delete-product"></i>'.html_safe, product, method: :delete, data: { confirm: 'Are you sure?' } %></td>

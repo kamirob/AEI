@@ -13,6 +13,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require jquery
+//= require jquery-ui
 //= require jquery_ujs
 //= require popper
 //= require activestorage
@@ -24,4 +25,8 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
     });
+});
+
+$('#invoice_client_name').autocomplete({
+    source: $('#invoice_client_name').data('autocomplete-source')
 });

@@ -15,7 +15,7 @@ class Admin::InvoicesController < ApplicationController
 
   # GET /admin/invoices/new
   def new
-    @admin_invoice = Admin::Invoice.new
+    @invoice = Invoice.new
   end
 
   # GET /admin/invoices/1/edit
@@ -25,15 +25,31 @@ class Admin::InvoicesController < ApplicationController
   # POST /admin/invoices
   # POST /admin/invoices.json
   def create
-    @admin_invoice = Admin::Invoice.new(admin_invoice_params)
+    @invoice = Invoice.new(invoice_params)
 
     respond_to do |format|
-      if @admin_invoice.save
-        format.html { redirect_to @admin_invoice, notice: 'Invoice was successfully created.' }
-        format.json { render :show, status: :created, location: @admin_invoice }
+      if @invoice.save
+        format.html { redirect_to @invoice, notice: 'Invoice was successfully created.' }
+        format.json { render :show, status: :created, location: @invoice }
+        format.js
       else
         format.html { render :new }
-        format.json { render json: @admin_invoice.errors, status: :unprocessable_entity }
+        format.json { render json: @invoice.errors, status: :unprocessable_entity }
+        format.js
+      end
+    end
+  end
+
+  # PATCH/PUT /invoices/1
+  # PATCH/PUT /invoices/1.json
+  def update
+    respond_to do |format|
+      if @invoice.update(invoice_params)
+        format.html { redirect_to @invoice, notice: 'Invoice was successfully updated.' }
+        format.json { render :show, status: :ok, location: @invoice }
+      else
+        format.html { render :edit }
+        format.json { render json: @invoice.errors, status: :unprocessable_entity }
       end
     end
   end

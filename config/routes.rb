@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   get 'admin' => 'admin/products#index'
   resources :clients
   devise_for :users, :controllers => { :omniauth_callbacks => "users/omniauth_callbacks" }
-  resources :products
+  resources :products do
+    member do
+        patch :toggle_enable_status
+    end
+  end
   resources :products_imports, only: [:new, :create] #Import Excel
   resources :categories
   resources :catalog

@@ -1,65 +1,82 @@
-<div id="myModal" class="modal fade" tabindex="-1" style="background-color: rgba(0, 0, 0, 0.9);" data-backdrop="false">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-        <div class="modal-header">
-            <h3 class="modal-title-centered">Nueva Factura</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
+<div class="wrapper">
+    <!-- Sidebar Holder -->
+    <nav id="sidebar">
+        <div class="sidebar-header">
+            <%= image_tag("nav/AEI.png", class: "img-responsive", id: "navbar-logo", size: "180x135") %>  
         </div>
-        <div class="modal-body">
-            <%= form_for @invoice, remote: true do |f| %>
-                <% if @invoice.errors.any? %>
-                    <div id="error_explanation">
-                    <h2><%= pluralize(invoice.errors.count, "error") %> prohibited this invoice from being saved:</h2>
 
-                    <ul>
-                    <% invoice.errors.full_messages.each do |message| %>
-                        <li><%= message %></li>
-                    <% end %>
-                    </ul>
-                    </div>
-                <% end %>
-
-                <div class="field-inactive">
-                    <%= f.label :prefix %>
-                    <%= f.text_field :prefix, class: 'inactive' %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :invoice_number %>
-                    <%= f.number_field :invoice_number %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :sub_total %>
-                    <%= f.number_field :sub_total %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :total %>
-                    <%= f.number_field :total %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :client_id %>
-                    <%= f.text_field :client_id %>
-                </div>
-
-                <div class="field">
-                    <%= f.label :product_id %>
-                    <%= f.text_field :product_id %>
-                </div>
-                
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <div class="actions">
-                        <%= f.submit 'Crear'%>
-                    </div>
-                </div>
+        <ul class="list-unstyled components">
+            <p class="dashboard">Dashboard</p>
+             <li>
+                <%= link_to "Inicio", admin_path, class: "text-menu"%>
+            </li>
+            <li>
+                <%= link_to "Productos", admin_path, class: "text-menu"%>
+            </li>
+            <li>
+                <%= link_to "Clientes", admin_clients_path, class: "text-menu"%>        
+            </li>
+            <li class="active">
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle text-menu">Facturación</a>
+                <ul class="collapse list-unstyled" id="homeSubmenu">
+                    <li>
+                                
+                    </li> 
+                </ul>
+            </li>
+            <% if current_user%>
+            <li>
+                <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete, class: "text-menu"%>
+            </li> 
             <% end %>
-        </div>
-    </div>
-</div>
-          
+        </ul>
+    </nav>
 
+    <!-- Page Content Holder -->
+    <div id="content">
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+
+                <button type="button" id="sidebarCollapse" class="navbar-btn">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fa fa-align-justify"></i>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="nav navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Page</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <%= render 'invoices/form' %>
+</div>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('#sidebarCollapse').on('click', function () {
+            $('#sidebar').toggleClass('active');
+            $(this).toggleClass('active');
+        });
+    });
+
+    $('#invoice_client_name').autocomplete({
+        source: $('#invoice_client_name').data('autocomplete-source')
+    });
+</script>

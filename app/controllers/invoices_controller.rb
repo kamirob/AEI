@@ -3,6 +3,8 @@ class InvoicesController < ApplicationController
 
   # GET /invoices
   # GET /invoices.json
+
+  
   def index
     @invoices = Invoice.all
   end
@@ -36,7 +38,7 @@ class InvoicesController < ApplicationController
         format.json { render :show, status: :created, location: @invoice }
         format.js
       else
-        format.html { render :new }
+        format.html { render :admin_path}
         format.json { render json: @invoice.errors, status: :unprocessable_entity }
         format.js
       end
