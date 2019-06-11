@@ -18,6 +18,8 @@
 //= require popper
 //= require activestorage
 //= require bootstrap-sprockets
+//= require main
+//= require invoices
 //= require_tree.
 
 $(document).ready(function () {
@@ -25,8 +27,4 @@ $(document).ready(function () {
         $('#sidebar').toggleClass('active');
         $(this).toggleClass('active');
     });
-});
-
-$('#invoice_client_name').autocomplete({
-    source: $('#invoice_client_name').data('autocomplete-source')
 });

@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+    $('#sidebarCollapse').on('click', function () {
+        $('#sidebar').toggleClass('active');
+        $(this).toggleClass('active');
+    });
     //Add row new product to invoice
     $('#addrow').click(function(){
         $('.item-row:last').after('<tr class="item-row"><td><input class="form-control item_name" placeholder="Nombre" data="{autocomplete_source: Product.order(:name).map(&:name)}" /></td><td><input class="form-control item_desc" placeholder="Descripción" /></td><td><input class="form-control cost" placeholder="Valor unit" /></td><td><input class="form-control qty" placeholder="Cantidad" /></td><td class="price_td"><span class="price"></span><span class="subtotal_currency"></span></td><td class="delete_td"><a class="delete" href="javascript:;" title="Remove row"><i class="fa fa-times"></i></span></a></td></tr>');
