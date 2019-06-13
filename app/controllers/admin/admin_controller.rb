@@ -2,7 +2,7 @@ class Admin::AdminController < ApplicationController
     before_action :authenticate_user!
 
     def index
-        @products = Product.all
+    @products = Product.where(["name LIKE ?","%#{params[:search]}%"])
         respond_to do |format|
           format.xlsx {
             response.headers[

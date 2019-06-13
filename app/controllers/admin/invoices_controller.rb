@@ -1,11 +1,9 @@
 class Admin::InvoicesController < ApplicationController
   before_action :set_admin_invoice, only: [:show, :edit, :update, :destroy]
 
-  # GET /admin/invoices
-  # GET /admin/invoices.json
+
   def index
     @invoices = Invoice.all
-    
   end
   
   def add_product
@@ -14,8 +12,7 @@ class Admin::InvoicesController < ApplicationController
       f.js 
     end  
   end
-  # GET /admin/invoices/1
-  # GET /admin/invoices/1.json
+  
   def show
   end
 

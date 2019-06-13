@@ -4,12 +4,13 @@ class Admin::ClientsController < Admin::AdminController
   # GET /admin/clients
   # GET /admin/clients.json
   def index
-    @clients = Client.all
+    @clients = Client.where(["name ILIKE ?","%#{params[:search_client]}%"])    
   end
 
   # GET /admin/clients/1
   # GET /admin/clients/1.json
   def show
+    @clients = Client.all
   end
 
   # GET /admin/clients/new

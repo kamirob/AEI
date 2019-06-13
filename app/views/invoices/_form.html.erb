@@ -70,6 +70,13 @@
                 <%= f.submit 'Crear Factura', class: 'btn-new-product'%>
             </div>  
         </div>
+
+        <%= form_tag admin_invoices_path, method: :get do %>
+            <div class="form-group">
+                <%= text_field_tag :search_product_invoice, params[:search_product_invoice], class: "form-control", placeholder: "Buscar" %>
+            </div>
+            <%= submit_tag 'Buscar', name: nil, class: "btn btn-primary btn-md" %>
+        <% end %>
         <div id="add-products" style="display:none;"></div>
     <% end %>
 </div>  

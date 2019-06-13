@@ -5,21 +5,20 @@ class InvoicesController < ApplicationController
   def index
     @invoices = Invoice.all
   end
-
+ 
   def add_product
+    @products = Product.where(["name ILIKE ?","%#{params[:search_product_invoice]}%"])
     respond_to do |f|
       f.html
       f.js 
-    end  
+    end 
   end
-  
 
+  
   def show
   end
 
-  
-  def new
-    @invoice = Invoice.new
+  def new  
     respond_to do |f|
       f.html
       f.js 
@@ -39,7 +38,7 @@ class InvoicesController < ApplicationController
         format.json { render :show, status: :created, location: @invoice }
         format.js
       else
-        format.html { render :admin_path}
+        format.html { render :show}
         format.json { render json: @invoice.errors, status: :unprocessable_entity }
         format.js
       end
@@ -74,10 +73,11 @@ class InvoicesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_invoice
       @invoice = Invoice.find(params[:id])
+
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def invoice_params
-      params.require(:invoice).permit(:prefix, :invoice_number, :sub_total, :total, :client_id, :product_id)
+      params.require(:invoice).permit(:prefix, :invoice_number, :sub_total, :total, :client_id)
     end
 end

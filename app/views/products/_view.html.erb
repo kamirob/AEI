@@ -4,8 +4,19 @@
       <h2>PRODUCTOS</h2>
     </div>  
   </div> 
-  <div class="row container-button-newproduct float-right"> 
-    <div class="col-md-12">
+
+  <div class="row ">
+    <div class=col-md-4> 
+      <%= form_tag admin_products_path, method: :get do %>
+            <div class="row">
+              <div class="col-md-12">
+                <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Busca productos por nombre" %>
+                <%= submit_tag 'Buscar', name: nil, class: "btn btn-primary btn-md" %>
+              </div>
+            </div>  
+      <% end %>
+    </div>  
+    <div class="col-md-4">
       <!--<%= link_to 'Cargar Excel',new_products_import_path %>-->
       <%= link_to '<i class="fas fa-file-download"></i> Descargar Excel'.html_safe,admin_products_path(format: :xlsx), class: 'btn-excel'%>
       <!--<%= link_to '<i class="fas fa-file-download"></i> Generar PDF'.html_safe, generate_pdf_path(format: :pdf), class: 'btn-generate-pdf' %>-->
@@ -17,7 +28,6 @@
     <table class="table">
       <thead class=thead-border>
         <tr>
-          <th scope="col">Id</th>
           <th scope="col">Estado</th>
           <th scope="col">Stock</th>
           <th scope="col">Nombre</th>
@@ -31,9 +41,8 @@
       <tbody>
         <% @products.each do |product| %>
           <tr>
-            <td><%= product.id %></td>
             <td class="product-<%= product.state %>">
-                <%= link_to "#{ product.state ? '' : '' }", toggle_enable_status_product_path(product), method: :patch, remote: :true, class: "btn btn-xs btn-#{ product.state ? 'success' : 'danger' }"  %>
+                <%= link_to "#{ product.state ? '' : '' }", toggle_enable_status_admin_product_path(product), method: :patch, remote: :true, class: "btn btn-xs btn-#{ product.state ? 'success' : 'danger' }"%>
             </td>
             <td><%= product.stock %></td>
             <td><%= product.name %></td>

@@ -17,7 +17,6 @@
           <th scope="col">Sub total</th>
           <th scope="col">Total</th>
           <th scope="col">Cliente</th>
-          <th scope="col">Producto</th>
         </tr>
       </thead>
 
@@ -29,7 +28,6 @@
             <td><%= invoice.sub_total %></td>
             <td><%= invoice.total %></td>
             <td><%= invoice.client %></td>
-            <td><%= invoice.product %></td>
             <td><%= link_to '<i class="fa fa-edit edit-product"></i>'.html_safe, edit_invoice_path(invoice) %></td>
             <% if can? :destroy, @invoice %>
               <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -38,6 +36,8 @@
         <% end %>
       </tbody>
     </table>
+
+   
     <div id="invoice-new" style="display:none;"></div>
   </div>
 </div>

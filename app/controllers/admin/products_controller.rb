@@ -4,7 +4,7 @@ class Admin::ProductsController < Admin::AdminController
   # GET /admin/products
   # GET /admin/products.json
   def index
-    @products = Product.all
+    @products = Product.where(["name ILIKE ?","%#{params[:search]}%"])    
     respond_to do |format|
       format.xlsx {
         response.headers[
@@ -15,12 +15,14 @@ class Admin::ProductsController < Admin::AdminController
     end
   end
 
+
   def toggle_enable_status
     @product.toggle!(:enabled)
   end
-  # GET /admin/products/1
-  # GET /admin/products/1.json
+
+
   def show
+   @products = Product.all
   end
 
   # GET /admin/products/new

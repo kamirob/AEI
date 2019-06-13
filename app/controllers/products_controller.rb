@@ -19,10 +19,9 @@ class ProductsController < ApplicationController
       end
     end
   end
-  # GET /products
-  # GET /products.json
+  
+
   def index
-    @products = Product.all
     respond_to do |format|
       format.xlsx {
         response.headers[
@@ -32,12 +31,9 @@ class ProductsController < ApplicationController
       format.html { render :index }
     end
   end
-
-  # GET /products/1
-  # GET /products/1.json
  
   def show
-  
+    @products = Product.all
   end
   
 
